@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#59A3F6"
+    tools:context=".custom_view.synthesis_score.SynthesisScoreActivity">
+
+    <com.hcp.hpd_android_demos_kotlin.custom_view.synthesis_score.SynthesisScoreComponentView
+        android:id="@+id/synthesisScoreView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_gravity="center" />
+
+</FrameLayout>

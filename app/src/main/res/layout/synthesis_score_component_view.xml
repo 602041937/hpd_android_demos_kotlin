@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@null"
+    tools:background="#59A3F6">
+
+    <com.hcp.hpd_android_demos_kotlin.custom_view.synthesis_score.SynthesisScoreView
+        android:id="@+id/synthesis_scoreView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/synthesis_scoreView"
+        app:layout_constraintEnd_toStartOf="@id/synthesis_scoreView"
+        app:layout_constraintTop_toTopOf="@id/synthesis_scoreView"
+        tools:text="发音\nPronunciation\n6.0分" />
+
+    <TextView
+        android:id="@+id/tv_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/synthesis_scoreView"
+        app:layout_constraintEnd_toEndOf="@id/synthesis_scoreView"
+        app:layout_constraintStart_toStartOf="@id/synthesis_scoreView"
+        tools:text="语法多样性及准确性\nGrammatical Range &amp; Accuracy\n6.0分" />
+
+    <TextView
+        android:id="@+id/tv_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/synthesis_scoreView"
+        app:layout_constraintStart_toEndOf="@id/synthesis_scoreView"
+        app:layout_constraintTop_toTopOf="@id/synthesis_scoreView"
+        tools:text="词汇多样性\nLexical Resource\n6.0分" />
+
+    <TextView
+        android:id="@+id/tv_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/synthesis_scoreView"
+        app:layout_constraintStart_toStartOf="@id/synthesis_scoreView"
+        app:layout_constraintTop_toBottomOf="@id/synthesis_scoreView"
+        tools:text="流利性与连贯性\nFluency &amp; Coherence\n6.0分" />
+
+    <View
+        android:id="@+id/v_average"
+        android:layout_width="12sp"
+        android:layout_height="12sp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_average"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:gravity="center"
+        android:text="雅思哥用户均分"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/v_average"
+        app:layout_constraintEnd_toStartOf="@id/v_average"
+        app:layout_constraintTop_toTopOf="@id/v_average" />
+
+    <View
+        android:id="@+id/v_score"
+        android:layout_width="12sp"
+        android:layout_height="12sp"
+        android:layout_marginBottom="15dp"
+        android:background="#FF3366"
+        app:layout_constraintBottom_toTopOf="@id/v_average"
+        app:layout_constraintEnd_toEndOf="@id/v_average" />
+
+    <TextView
+        android:id="@+id/tv_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:gravity="center"
+        android:text="本次成绩"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/v_score"
+        app:layout_constraintEnd_toStartOf="@id/v_score"
+        app:layout_constraintTop_toTopOf="@id/v_score" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
