@@ -3,16 +3,28 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+    signingConfigs {
+        debug {
+            storeFile file('/Users/hpd/Desktop/hpd_pros/android/pro/hpd_android_demos_kotlin/app/hpd_anroid_demos_kotlin_keystore_debug')
+            storePassword '123456'
+            keyAlias 'hpd'
+            keyPassword '123456'
+        }
+    }
     compileSdkVersion 29
 
     defaultConfig {
         applicationId "com.hcp.hpd_android_demos_kotlin"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
     }
 
     buildTypes {
@@ -32,5 +44,10 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //高德地图定位 SDK
+    implementation 'com.amap.api:location:5.1.0'
+    implementation 'com.amap.api:3dmap:7.9.0'
+    implementation 'com.amap.api:search:7.9.0'
 
 }
