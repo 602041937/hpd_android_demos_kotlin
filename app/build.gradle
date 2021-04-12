@@ -11,14 +11,15 @@ android {
             keyPassword '123456'
         }
     }
-    compileSdkVersion 28
+    compileSdkVersion 29
 
     defaultConfig {
         applicationId "com.hcp.hpd_android_demos_kotlin"
         minSdkVersion 21
-        targetSdkVersion 28
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -52,4 +53,9 @@ dependencies {
     implementation 'com.amap.api:3dmap:7.9.0'
     implementation 'com.amap.api:search:7.9.0'
 
+    // 腾讯地图
+    implementation 'com.tencent.map:tencent-map-vector-sdk:4.3.4'
+    implementation 'com.tencent.map.geolocation:TencentLocationSdk-openplatform:7.2.6'
+
+    implementation "androidx.multidex:multidex:2.0.1"
 }
