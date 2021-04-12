@@ -2,7 +2,13 @@ package com.hcp.hpd_android_demos_kotlin.location
 
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.amap.api.maps.AMap
 import com.amap.api.maps.CameraUpdateFactory
 import com.amap.api.maps.MapView
@@ -21,15 +27,28 @@ class LocationActivity : AppCompatActivity() {
     }
 
     private lateinit var mapView: MapView
+    private lateinit var recyclerView: RecyclerView
     private lateinit var aMap: AMap
     private lateinit var myLocationStyle: MyLocationStyle
     private var poiItems = ArrayList<PoiItem>()
+
+    private lateinit var adapter: Adapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_location)
 
         mapView = findViewById(R.id.mapView)
+        recyclerView = findViewById(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        adapter = Adapter()
+        recyclerView.adapter = adapter
+
+        initMap(savedInstanceState)
+    }
+
+    private fun initMap(savedInstanceState: Bundle?) {
+
         mapView.onCreate(savedInstanceState)
         aMap = mapView.map
         aMap.setOnMyLocationChangeListener {
@@ -85,6 +104,7 @@ class LocationActivity : AppCompatActivity() {
                         "setOnPoiSearchListener onPoiSearched: p0 = $p0,p1= $p1"
                     )
                     poiItems = p0?.pois ?: ArrayList<PoiItem>()
+                    adapter.notifyDataSetChanged()
                 }
             })
             poiSearch.searchPOIAsyn()
@@ -111,4 +131,38 @@ class LocationActivity : AppCompatActivity() {
         mapView.onDestroy()
     }
 
+    inner class Adapter : RecyclerView.Adapter<Adapter.ViewHolder>() {
+
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+
+            val view =
+                LayoutInflater.from(parent.context).inflate(R.layout.location_cell, parent, false)
+            return ViewHolder(view)
+        }
+
+        override fun getItemCount(): Int {
+            return poiItems.size
+        }
+
+        override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+            val item = poiItems[position]
+            holder.tvTitle.text = item.title
+            holder.tvSubTitle.text = item.snippet
+
+            holder.itemView.setOnClickListener {
+                finish()
+            }
+        }
+
+        inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+            var tvTitle: TextView
+            var tvSubTitle: TextView
+
+            init {
+                tvTitle = itemView.findViewById(R.id.tvTitle)
+                tvSubTitle = itemView.findViewById(R.id.tvSubTitle)
+            }
+        }
+    }
 }
