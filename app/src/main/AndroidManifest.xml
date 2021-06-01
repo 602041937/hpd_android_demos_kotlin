@@ -12,46 +12,44 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-
-    <!--腾讯地图 SDK 要求的权限(开始)-->
-    <!--  地图SDK  -->
-    <!--访问网络获取地图服务-->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!--检查网络可用性-->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <!-- 访问WiFi状态 -->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <!--需要外部存储写权限用于保存地图缓存-->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!--获取 device id 辨别设备-->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-
-    <!--  定位SDK  -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> <!-- 腾讯地图 SDK 要求的权限(开始) -->
+    <!-- 地图SDK -->
+    <!-- 访问网络获取地图服务 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 检查网络可用性 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 访问WiFi状态 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 需要外部存储写权限用于保存地图缓存 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 获取 device id 辨别设备 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 定位SDK -->
     <!-- 通过GPS得到精确位置 -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <!-- 通过网络得到粗略位置 -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <!-- 访问网络. 某些位置信息需要从网络服务器获取 -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!-- 访问WiFi状态. 需要WiFi信息用于网络定位 -->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <!-- 修改WiFi状态. 发起WiFi扫描, 需要WiFi信息用于网络定位 -->
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <!-- 访问网络状态, 检测网络的可用性. 需要网络运营商相关信息用于网络定位 -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <!-- 访问网络的变化, 需要某些信息用于网络定位 -->
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-    <!-- 访问手机当前状态, 需要device id用于网络定位 -->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <!-- 访问蓝牙状态，需要蓝牙信息用于网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 通过网络得到粗略位置 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 访问网络. 某些位置信息需要从网络服务器获取 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 访问WiFi状态. 需要WiFi信息用于网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 修改WiFi状态. 发起WiFi扫描, 需要WiFi信息用于网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> <!-- 访问网络状态, 检测网络的可用性. 需要网络运营商相关信息用于网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 访问网络的变化, 需要某些信息用于网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" /> <!-- 访问手机当前状态, 需要device id用于网络定位 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 访问蓝牙状态，需要蓝牙信息用于网络定位 -->
     <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <!-- 支持A-GPS辅助定位 -->
-    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
-    <!-- 用于 log 日志 -->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> <!-- 支持A-GPS辅助定位 -->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" /> <!-- 用于 log 日志 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!--腾讯地图 SDK 要求的权限(结束)-->
+
+    <!--    有赞-->
+    <!-- 允许应用程序联网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 检测联网方式, 区分用户设备使用的是2G、3G或是WiFi -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 外部存储写入权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 为了更好的体验需要获取地理信息的权限 (以下非必须权限) -->
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <uses-permission android:name="android.permission.ACCESS_ASSISTED_GPS" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!--    有赞-->
 
     <application
         android:name=".MyApplication"
@@ -61,21 +59,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".location_tx.LocationTengXunActivity"></activity>
-        <activity android:name=".location.LocationActivity" />
-        <activity android:name=".custom_view.synthesis_score.SynthesisScoreActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".youzan.YouZanWebActivity"></activity>
+        <activity android:name=".youzan.YouZanActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".location_tx.LocationTengXunActivity" />
+        <activity android:name=".location.LocationActivity" />
+        <activity android:name=".custom_view.synthesis_score.SynthesisScoreActivity" />
+        <activity android:name=".MainActivity">
+
+        </activity>
 
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="6b118b41e6c5346182d56cf8ec28a0d4" />
-
         <meta-data
             android:name="TencentMapSDK"
             android:value="DEGBZ-G6CWG-7OSQS-IIJXT-XIHMS-WYFEO" />
