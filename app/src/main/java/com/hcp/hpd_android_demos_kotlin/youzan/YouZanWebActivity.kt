@@ -37,7 +37,7 @@ class YouZanWebActivity : AppCompatActivity() {
 
             override fun call(p0: Context?, p1: Boolean) {
 
-                YouzanSDK.yzlogin("185113748736", "", "", "", "0", object : YzLoginCallback {
+                YouzanSDK.yzlogin("10086", "", "", "", "0", object : YzLoginCallback {
                     override fun onSuccess(p0: YouzanToken?) {
 
                         webView.post {

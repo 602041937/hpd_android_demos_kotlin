@@ -15,6 +15,8 @@ class YouZanActivity : AppCompatActivity() {
             "https://shop41610176.youzan.com/v2/showcase/homepage?alias=d8PgEGLuap&dc_ps=2605582907183549446.300001"
         private const val urlSingle =
             "https://shop41610176.m.youzan.com/wscgoods/detail/2flkz20he3om0"
+        private const val youhuiquan =
+            "https://shop41610176.youzan.com/wscump/coupon/fetch?alias=7g9imhl5&sign=1972575ee9d48a8b5a7f85adeb09802d&shopAutoEnter=1"
     }
 
     private lateinit var button1: Button
@@ -22,6 +24,7 @@ class YouZanActivity : AppCompatActivity() {
     private lateinit var button3: Button
     private lateinit var button4: Button
     private lateinit var button5: Button
+    private lateinit var button6: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +35,7 @@ class YouZanActivity : AppCompatActivity() {
         button3 = findViewById(R.id.button3)
         button4 = findViewById(R.id.button4)
         button5 = findViewById(R.id.button5)
+        button6 = findViewById(R.id.button6)
 
         button1.setOnClickListener {
             val uri = Uri.parse(url)
@@ -59,6 +63,13 @@ class YouZanActivity : AppCompatActivity() {
         }
         button5.setOnClickListener {
 
+        }
+        button6.setOnClickListener {
+            YouZanWebActivity.url = youhuiquan
+            val intent = Intent(
+                this, YouZanWebActivity::class.java
+            )
+            startActivity(intent)
         }
     }
 }
